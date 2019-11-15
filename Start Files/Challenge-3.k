@@ -11,3 +11,35 @@ The steps involved are to:
 5. Move forward to the east end of the world.
 
 */
+import "turns";
+
+function descendStairs(){
+	move();
+	turnRight();
+	move();
+	repeat(3){
+		turnLeft();
+		move();
+		turnRight();
+		move();
+	}
+	turnLeft();
+	move();
+}
+
+function climbStairs(){
+	move();
+	while(frontIsBlocked()){
+	turnLeft();
+	move();
+	turnRight();
+	move();
+	}
+	putBeeper();
+}
+
+
+function Solve(){
+	climbStairs();
+	descendStairs();
+}
